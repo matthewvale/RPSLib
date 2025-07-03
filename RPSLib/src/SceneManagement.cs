@@ -15,13 +15,13 @@ namespace RPSLib
     public class SceneManagement
     {
 
-        private static Stack<Scene> _sceneStack = new Stack<Scene>();
+        private static Stack<string> _sceneStack = new Stack<string>();
         private static string _targetScene = string.Empty;
 
         /// <summary>
         /// Load a given scene and optionally set it active.
         /// </summary>
-        public static void LoadScene(string sceneName, LoadSceneMode loadMode, bool setActive = false)
+        public static void LoadScene(string sceneName, LoadSceneMode loadMode, bool setActive = true)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace RPSLib
             try
             {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-                AddToSceneStack(SceneManager.GetSceneByName(sceneName));
+                AddToSceneStack(sceneName);
             }
             catch
             {
@@ -94,7 +94,7 @@ namespace RPSLib
             // Set the previous scene as the active scene
             if (_sceneStack != null && _sceneStack.Count >= 2)
             {
-                string previousSceneToLoad = _sceneStack.ElementAt(_sceneStack.Count - 1).name;
+                string previousSceneToLoad = _sceneStack.First();
                 SetSceneActive(previousSceneToLoad);
             }
 
@@ -103,7 +103,6 @@ namespace RPSLib
             {
                 UnloadScene(_targetScene);
             }
-
 
             // Pop the unloaded scene
             RemoveCurrentSceneFromStack();
@@ -115,24 +114,26 @@ namespace RPSLib
             SetSceneActive(_targetScene);
         }
 
-        private static void AddToSceneStack(Scene scene)
+        private static void AddToSceneStack(string scene)
         {
             if (_sceneStack.Contains(scene))
             {
-                //Debug.Log("SceneStack :: " + scene.name + " already in stack, not adding again.", Debug.Style.Normal);
+                Debug.Log("SceneStack already contains :: " + scene);
                 return;
             }
 
+            Debug.Log($"Adding {scene} to the Stack");
             _sceneStack.Push(scene);
 
-            //DebugStackState();
+            DebugStackState();
         }
 
         private static void RemoveCurrentSceneFromStack()
         {
+            Debug.Log($"Removing {_sceneStack.Last()} from the Stack");
             _sceneStack.Pop();
 
-            //DebugStackState();
+            DebugStackState();
         }
 
         private static void ClearSceneStack()
@@ -145,7 +146,7 @@ namespace RPSLib
             string stackString = "Order of Latest > Oldest: ";
             for (int i = 0; i < _sceneStack.Count; i++)
             {
-                stackString += _sceneStack.ElementAt(i).name + ", ";
+                stackString += _sceneStack.ElementAt(i) + ", ";
             }
             Debug.Log("SceneStack :: " + stackString);
         }
