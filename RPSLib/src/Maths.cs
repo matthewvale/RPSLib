@@ -21,17 +21,18 @@ namespace RPSLib
         {
 
             /// <summary>
-            /// Get the distance between 2 objects, fast, for simple comparison. 
-            /// <br></br>This is NOT 100% accurate, but faster than using Vector3.Distance.
-            /// <br></br>Use Vector3.Distance if you need the actual distance.
+            /// Get the rough distance between 2 points using Sqr Mangitude.
+            /// <br></br>Use Vector3.Distance if you need the actual distance between 2 points.
+            /// <br></br>
+            /// <br></br>Example: Which object out of N objects is closer to a point, without caring about actual distance?
             /// </summary>
-            public static float GetFastDistance(Vector3 from, Vector3 to) { return (to - from).sqrMagnitude; }
+            public static float SqrMagDistance(Vector3 from, Vector3 to) { return (to - from).sqrMagnitude; }
 
             /// <summary>
             /// Get the closest GameObject to a point from a List of GameObjects.
             /// </summary>
             /// <param name="from">Point of origin.</param>
-            /// <param name="targets">List of possible targets.</param>
+            /// <param name="targets">List of GameObjects to compare.</param>
             public static GameObject GetClosestGameObject(Vector3 from, List<GameObject> targets)
             {
                 byte closestIndex = 0;
