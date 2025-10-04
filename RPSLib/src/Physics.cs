@@ -56,7 +56,7 @@ namespace RPSLib
             public static Vector3 GetMousePositionOnPlane(Vector2 mouseScreenPos, Camera camera, Transform originTransform)
             {
                 // Get raw mouse position on screen
-                Vector3 mousePosition = mouseScreenPos;
+                Vector3 mousePosition = new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0f);
 
                 // Set up a ray and a mathematical plane
                 Ray mouseRay = camera.ScreenPointToRay(mousePosition);
