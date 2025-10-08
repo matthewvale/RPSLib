@@ -122,10 +122,9 @@ namespace RPSLib
                 return;
             }
 
-            Debug.Log($"Adding {scene} to the Stack");
             _sceneStack.Push(scene);
 
-            DebugStackState();
+            //DebugStackState();
         }
 
         private static void RemoveCurrentSceneFromStack()
