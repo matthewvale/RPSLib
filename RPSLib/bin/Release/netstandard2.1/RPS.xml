@@ -115,6 +115,28 @@
             selected is proportional to its weight.
             </summary>
         </member>
+        <member name="T:RPSLib.Maths.Angles">
+            <summary>
+            Various angle functions.
+            </summary>
+        </member>
+        <member name="M:RPSLib.Maths.Angles.GetRandomPointOnRadius(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Get a random point on the circumference of a circle around an origin point.
+            </summary>
+            <param name="origin"></param>
+            <param name="radius"></param>
+            <returns>A Vector3 point on the circumference of the circle.</returns>
+        </member>
+        <member name="M:RPSLib.Maths.Angles.GetPointOnRadius(UnityEngine.Vector3,System.Single,System.Single)">
+            <summary>
+            Get a point on the circumference of a circle around an origin point, given an angle.
+            </summary>
+            <param name="origin"></param>
+            <param name="radius"></param>
+            <param name="angle">The precomputed angle.</param>
+            <returns>A Vector3 point on the circumference of the circle.</returns>
+        </member>
         <member name="T:RPSLib.Physics">
             <summary>
             Physics related helpers.
