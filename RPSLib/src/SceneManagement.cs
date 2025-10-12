@@ -118,7 +118,6 @@ namespace RPSLib
         {
             if (_sceneStack.Contains(scene))
             {
-                Debug.Log("SceneStack already contains :: " + scene);
                 return;
             }
 
