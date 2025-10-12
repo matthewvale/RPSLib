@@ -126,6 +126,39 @@ namespace RPSLib
 
         }
 
+        /// <summary>
+        /// Various angle functions.
+        /// </summary>
+        public class Angles
+        {
+            /// <summary>
+            /// Get a random point on the circumference of a circle around an origin point.
+            /// </summary>
+            /// <param name="origin"></param>
+            /// <param name="radius"></param>
+            /// <returns>A Vector3 point on the circumference of the circle.</returns>
+            public static Vector3 GetRandomPointOnRadius(Vector3 origin, float radius)
+            {
+                float angle = Random.Range(0f, Mathf.PI * 2f);
+                return GetPointOnRadius(origin, radius, angle);
+            }
+
+            /// <summary>
+            /// Get a point on the circumference of a circle around an origin point, given an angle.
+            /// </summary>
+            /// <param name="origin"></param>
+            /// <param name="radius"></param>
+            /// <param name="angle">The precomputed angle.</param>
+            /// <returns>A Vector3 point on the circumference of the circle.</returns>
+            public static Vector3 GetPointOnRadius(Vector3 origin, float radius, float angle)
+            {
+                float x = origin.x + radius * Mathf.Cos(angle);
+                float z = origin.z + radius * Mathf.Sin(angle);
+                return new Vector3(x, origin.y, z);
+            }
+
+        }
+
     }
 
 }
