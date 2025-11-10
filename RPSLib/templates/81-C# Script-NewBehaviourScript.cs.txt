@@ -6,44 +6,38 @@ using UnityEngine;
 
 namespace GameCore
 {
-
     public class #SCRIPTNAME# : MonoBehaviour
     {
+		#region Public Properties
+
+
+
+        #endregion
 
         #region Private Properties
 
 
-        #endregion
 
-        #region Public Properties
-
-
-        #endregion
+        #endregion        
 
 
         #region Unity Flow
 
-        private void Awake()
-        {
-            CacheData();
-        }
+
+
+        #endregion
+
+		#region Public Methods
+
+
 
         #endregion
 
         #region Private Methods
 
-        private void CacheData()
-        {
-
-        }
-
-        #endregion
-
-        #region Public Methods
 
 
-
-        #endregion
+        #endregion        
 
     }
 }
