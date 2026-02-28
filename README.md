@@ -1,4 +1,4 @@
-# RPS.dll:
+# What is RPSLib?
 Named after my game studio alias, Red Phoenix Studios. A growing collection of common code that is used throughout all of my Unity projects. The idea is to:
 - Save time re-writing the same code for each project.
 - Provide optimized code for common operations, aiding in high performance for runtime.
@@ -17,12 +17,11 @@ This Unity package is also included in this repo and is all you need to use this
 # Installation:
 Head to [Releases](https://github.com/matthewvale/RPSLib/releases) and grab the files you need.
 
-- **(DLL-only)** Install `RPS.dll` and `RPS.xml` by dropping the file into your project. Ideally in it's own unique folder. Simple!
-- **(Unity Package)** Install the RPSLib package by dropping `RPSLib.unitypackage` into your project. The package will always contain the latest `RPS.dll`, so no need to grab them if yo use the package, nor build the project unless you edit the source files. If you do edit the source and make a build, copy the `RPS.dll` and `RPS.xml` into your project, overriding the existing files.
+- **(Unity Package)** Install the RPSLib package by dropping `RPSLib.unitypackage` into your project and import everything. Yeah, _that_ easy.
 
 **Dependencies:**
 - Steamworks.NET (included in RPSLib.unitypackage)
-- Unity Localization package (please fetch this yourself)
+- You may get some `references not found` warnings, simply add the required libraries into `RPScore.asmdef`. One example is the Unity Localization package.
 
 # Usage:
 Within your code, you can access the DLL by simply typing `RPSLib.` and then the class you require, or by importing RPS at the top of your file with `using RPSLib;`.
@@ -57,5 +56,5 @@ RPSLib.ScreenshotHandler.TakeScreenshot("Screenshot", true, true, RPSLib.Screens
 
 # Contribution:
 PRs are welcome here. See [contribution rules](https://github.com/matthewvale/RPSLib/blob/develop/CONTRIBUTIONS.md).
-Please branch off the `develop` branch.
+Please branch off the `release` branch.
 You are also welcome to edit the RPSLib.unitypackage, but please be explicit in your changes.
