@@ -1,11 +1,11 @@
 # What is RPSLib?
-Named after my game studio alias, Red Phoenix Studios. A growing collection of common code that is used throughout all of my Unity projects. The idea is to:
+Named after my game studio alias, Red Phoenix Studios. This library is a constantly evolving collection of common systems that are used throughout my Unity projects. The idea is to:
 - Save time re-writing the same code for each project.
 - Provide optimized code for common operations, aiding in high performance for runtime.
 - Provide easy to use methods for more complex algorithms.
 
 # RPSLib.unitypackage:
-This Unity package is also included in this repo and is all you need to use this library. It contains various scripts, prefabs, render pipeline configs, UI elements, a splash scene and more. Some systems included are inventory management, itemisation and ScriptableObject based quests.
+The Unity package is the main asset in this repo and is all you need to use this library. It contains various scripts, prefabs, render pipeline configs, UI elements, a splash scene and more. Some systems included are inventory management, itemisation and ScriptableObject based quests.
 
 ⚠️ The Red Phoenix Studios logo included in the Unity package is **NOT** for reuse or modification.
 
