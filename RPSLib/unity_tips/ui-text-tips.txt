@@ -1,0 +1,2 @@
+.text and .SetText are the same unless you use formatting:
+for example_textObject.text = $"Score {score}" is worse than SetText("Score {0}", score)
